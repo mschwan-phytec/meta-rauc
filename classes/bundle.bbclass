@@ -231,9 +231,6 @@ do_bundle() {
 		bbfatal "'RAUC_CERT_FILE' not set. Please set to a valid certificate file location."
 	fi
 
-	if [ -e ${B}/bundle.raucb ]; then
-		rm ${B}/bundle.raucb
-	fi
 	${STAGING_DIR_NATIVE}${bindir}/rauc bundle \
 		--debug \
 		--cert="${RAUC_CERT_FILE}" \
@@ -243,6 +240,7 @@ do_bundle() {
 		${B}/bundle.raucb
 }
 do_bundle[dirs] = "${B}"
+do_bundle[cleandirs] = "${B}"
 
 addtask bundle after do_configure before do_build
 
