@@ -1,6 +1,9 @@
 require rauc.inc
 
-SRC_URI = "https://github.com/rauc/rauc/releases/download/v${PV}/rauc-${PV}.tar.xz"
+#SRC_URI = "https://github.com/rauc/rauc/releases/download/v${PV}/rauc-${PV}.tar.xz"
+SRC_URI = "git://${HOME}/documents/github/rauc/rauc;branch=http-streaming"
+S = "${WORKDIR}/git"
+SRCREV = "${AUTOREV}"
 
 SRC_URI[sha256sum] = "d4ea009ce702bcb083d942398ccfedec959c6bbb7adc0fd77ae9314ce11d9d91"
 
