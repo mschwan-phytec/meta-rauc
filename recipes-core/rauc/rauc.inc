@@ -17,6 +17,7 @@ PACKAGECONFIG[service] = "--enable-service,--enable-service=no,dbus,${PN}-servic
 PACKAGECONFIG[network] = "--enable-network,--enable-network=no,curl"
 PACKAGECONFIG[json]    = "--enable-json,--enable-json=no,json-glib"
 PACKAGECONFIG[gpt]     = "--enable-gpt,--enable-gpt=no,util-linux"
+PACKAGECONFIG[streaming] = "--enable-streaming,--enable-streaming=no,libnl"
 
 RDEPENDS_${PN}-service += "dbus"
 
